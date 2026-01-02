@@ -413,6 +413,7 @@ void addEndTime(YTPlayerViewController *self, YTSingleVideoController *video, YT
 
 void autoSkipShorts(YTPlayerViewController *self, YTSingleVideoController *video, YTSingleVideoTime *time) {
     if (!ytlBool(@"autoSkipShorts")) return;
+    if (ytlBool(@"restrictShorts")) return;
 
     if (floor(time.time) >= floor(video.totalMediaTime)) {
         if ([self.parentViewController isKindOfClass:%c(YTShortsPlayerViewController)]) {
@@ -729,17 +730,50 @@ static BOOL findCell(ASNodeController *nodeController, NSArray <NSString *> *ide
 - (BOOL)shouldEnablePlayerBar { return ytlBool(@"shortsProgress") ? YES : NO; }
 - (BOOL)shouldAlwaysEnablePlayerBar { return ytlBool(@"shortsProgress") ? YES : NO; }
 - (BOOL)shouldEnablePlayerBarOnlyOnPause { return ytlBool(@"shortsProgress") ? NO : YES; }
+
+// Restrict Shorts - Block navigation to next/previous video
+- (void)reelContentViewRequestsAdvanceToNextVideo:(id)video {
+    if (ytlBool(@"restrictShorts")) return;
+    %orig;
+}
+
+- (void)reelContentViewRequestsRewindToPreviousVideo:(id)video {
+    if (ytlBool(@"restrictShorts")) return;
+    %orig;
+}
 %end
 
 %hook YTReelPlayerViewControllerSub
 - (BOOL)shouldEnablePlayerBar { return ytlBool(@"shortsProgress") ? YES : NO; }
 - (BOOL)shouldAlwaysEnablePlayerBar { return ytlBool(@"shortsProgress") ? YES : NO; }
 - (BOOL)shouldEnablePlayerBarOnlyOnPause { return ytlBool(@"shortsProgress") ? NO : YES; }
+
+// Restrict Shorts - Block navigation to next/previous video
+- (void)reelContentViewRequestsAdvanceToNextVideo:(id)video {
+    if (ytlBool(@"restrictShorts")) return;
+    %orig;
+}
+
+- (void)reelContentViewRequestsRewindToPreviousVideo:(id)video {
+    if (ytlBool(@"restrictShorts")) return;
+    %orig;
+}
 %end
 
 %hook YTShortsPlayerViewController
 - (BOOL)shouldAlwaysEnablePlayerBar { return ytlBool(@"shortsProgress") ? YES : NO; }
 - (BOOL)shouldEnablePlayerBarOnlyOnPause { return ytlBool(@"shortsProgress") ? NO : YES; }
+
+// Restrict Shorts - Block navigation to next/previous video
+- (void)reelContentViewRequestsAdvanceToNextVideo:(id)video {
+    if (ytlBool(@"restrictShorts")) return;
+    %orig;
+}
+
+- (void)reelContentViewRequestsRewindToPreviousVideo:(id)video {
+    if (ytlBool(@"restrictShorts")) return;
+    %orig;
+}
 %end
 
 %hook YTColdConfig

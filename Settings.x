@@ -240,6 +240,7 @@ static NSString *GetCacheSize() {
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
                 [self switchWithTitle:@"ShortsOnlyMode" key:@"shortsOnlyMode"],
+                [self switchWithTitle:@"RestrictShorts" key:@"restrictShorts"],
                 [self switchWithTitle:@"AutoSkipShorts" key:@"autoSkipShorts"],
                 [self switchWithTitle:@"HideShorts" key:@"hideShorts"],
                 [self switchWithTitle:@"ShortsProgress" key:@"shortsProgress"],

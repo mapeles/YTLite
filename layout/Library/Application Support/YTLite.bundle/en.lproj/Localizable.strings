@@ -253,8 +253,8 @@
 "AutoSkipShorts" = "Auto-skip Shorts";
 "ShortsOnlyMode" = "Shorts only mode";
 "ShortsOnlyModeDesc" = "Limits YouTube functionality to viewing Shorts only.";
-"RestrictShorts" = "Limit Shorts";
-"RestrictShortsDesc" = "Limits the number of Shorts in the feed to 10-15. Useful if you want to avoid the habit of endlessly scrolling through the feed.";
+"RestrictShorts" = "Block Shorts scrolling";
+"RestrictShortsDesc" = "Blocks scrolling to the next or previous Shorts video. Only the first Shorts video can be viewed.";
 "ShortsProgress" = "Enable progress bar";
 "ShortsProgressDesc" = "Displays progress bar in the Shorts overlay.";
 "SpeedByLongTap" = "Increase Shorts playback rate";

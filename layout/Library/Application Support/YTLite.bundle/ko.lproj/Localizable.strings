@@ -253,8 +253,8 @@
 "AutoSkipShorts" = "Shorts 자동 건너뛰기";
 "ShortsOnlyMode" = "Shorts 전용 모드";
 "ShortsOnlyModeDesc" = "유튜브 기능을 Shorts만 볼 수 있도록 제한합니다.";
-"RestrictShorts" = "Shorts 제한";
-"RestrictShortsDesc" = "피드에 있는 Shorts 수를 10-15개로 제한합니다. 피드를 끝없이 스크롤하는 습관을 피하고 싶을 때 유용합니다.";
+"RestrictShorts" = "Shorts 스크롤 차단";
+"RestrictShortsDesc" = "다음 또는 이전 Shorts 영상으로의 스크롤을 차단합니다. 첫 번째 Shorts 영상만 볼 수 있습니다.";
 "ShortsProgress" = "진행률 표시줄 활성화";
 "ShortsProgressDesc" = "Shorts 오버레이에 진행률 표시줄 표시";
 "SpeedByLongTap" = "Shorts 재생 속도 향상";
